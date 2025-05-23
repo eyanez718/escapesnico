@@ -5,7 +5,7 @@
 @section('content')
     <div class="container">
         <a href="{{ route('usuarios.create') }}" class="btn btn-dark float-right mb-3"><i class="mdi mdi-plus" aria-hidden="true"></i> Agregar usuario</a>
-        <h1>Usuarios</h1>
+        <h1><i class="mdi mdi-account-multiple" aria-hidden="true"></i> Usuarios</h1>
         @if(session('success'))
             <div class="alert alert-success"><i class="mdi mdi-check-bold" aria-hidden="true"></i> {{ session('success') }}</div>
         @endif

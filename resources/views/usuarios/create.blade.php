@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Agregando usuario</h1>
+        <h1><i class="mdi mdi-plus" aria-hidden="true"></i> Agregando usuario</h1>
         <form method="POST" action="{{ route('usuarios.store') }}">
             @csrf
             <!-- Nombre -->

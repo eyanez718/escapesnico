@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Detalle del rol: {{ $rol->nombre }}</h1>
+        <h1><i class="mdi mdi-eye" aria-hidden="true"></i> Detalle del rol: {{ $rol->nombre }}</h1>
         <p><strong>ID:</strong> {{ $rol->id }}</p>
         <p><strong>Nombre:</strong> {{ $rol->nombre }}</p>
         <p><strong>Descripción:</strong> {{ $rol->descripcion }}</p>

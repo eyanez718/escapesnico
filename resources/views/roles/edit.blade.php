@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Editando rol: {{ $rol->nombre }}</h1>
+        <h1><i class="mdi mdi-pencil" aria-hidden="true"></i> Editando rol: {{ $rol->nombre }}</h1>
         <form method="POST" action="{{ route('roles.update', $rol) }}">
             @csrf
             @method('PUT')

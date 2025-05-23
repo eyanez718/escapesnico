@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Agregando rol</h1>
+        <h1><i class="mdi mdi-plus" aria-hidden="true"></i> Agregando rol</h1>
         <form method="POST" action="{{ route('roles.store') }}">
             @csrf
             <!-- Nombre -->

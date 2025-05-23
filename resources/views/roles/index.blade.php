@@ -5,7 +5,7 @@
 @section('content')
     <div class="container">
         <a href="{{ route('roles.create') }}" class="btn btn-dark float-right mb-3"><i class="mdi mdi-plus" aria-hidden="true"></i> Agregar rol</a>
-        <h1>Roles</h1>
+        <h1><i class="mdi mdi-shield" aria-hidden="true"></i> Roles</h1>
         @if(session('success'))
             <div class="alert alert-success"><i class="mdi mdi-check-bold" aria-hidden="true"></i> {{ session('success') }}</div>
         @endif
