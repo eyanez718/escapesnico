@@ -9,15 +9,15 @@
     <!-- Material Design Icons -->
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
 
-    <title>Document</title>
+    <title>Escapes Nico @yield('title', '')</title>
 </head>
 <body>
     @if (Auth::check())
         @include('partials.menu-principal')
     @endif
-    <div class="container">
-        @yield('content')
-    </div>
+    <br>
+    @yield('content')
+    <br><br>
     @if (Auth::check())
         @include('partials.footer')
     @endif

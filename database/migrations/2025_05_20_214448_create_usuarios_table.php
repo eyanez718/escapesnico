@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('operadores', function (Blueprint $table) {
+        Schema::create('usuarios', function (Blueprint $table) {
             $table->smallIncrements('id');
-            $table->string('nombre');
+            $table->string('nombre', 20);
+            $table->string('nombre', 50);
             $table->string('email')->unique();
             $table->string('contrasenia');
             $table->unsignedTinyInteger('id_rol');
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('operadores');
+        Schema::dropIfExists('usuarios');
     }
 };
