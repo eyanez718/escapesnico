@@ -28,7 +28,7 @@
                         </a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item {{ request()->routeIs('stock.index') ? 'active' : '' }}" href="#"><i class="mdi mdi-package-variant" aria-hidden="true"></i> Stock</a>
-                            <a class="dropdown-item {{ request()->routeIs('maquinas.index') ? 'active' : '' }}" href="#"><i class="mdi mdi-wrench" aria-hidden="true"></i> Maquinaria</a>
+                            <a class="dropdown-item {{ request()->routeIs('maquinas.index') ? 'active' : '' }}" href="{{ route('maquinas.index') }}"><i class="mdi mdi-wrench" aria-hidden="true"></i> Maquinaria</a>
                             <a class="dropdown-item {{ request()->routeIs('compras.index') ? 'active' : '' }}" href="#"><i class="mdi mdi-shopping" aria-hidden="true"></i> Compras</a>
                             <a class="dropdown-item {{ request()->routeIs('proveedores.index') ? 'active' : '' }}" href="{{ route('proveedores.index') }}"><i class="mdi mdi-truck" aria-hidden="true"></i> Proveedores</a>
                             <div class="dropdown-divider"></div>

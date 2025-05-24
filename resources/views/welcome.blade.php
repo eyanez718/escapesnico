@@ -38,7 +38,7 @@
                         <h5 class="card-title"><i class="mdi mdi-wrench" aria-hidden="true"></i> Maquinaria</h5>
                         <p class="card-text">Registro y seguimiento del parque de máquinas o equipos. Incluye datos técnicos, historial de uso, mantenimiento y estado actual.</p>
                     </div>
-                    <a href="#" class="btn btn-secondary stretched-link"></a>
+                    <a href="{{ route('maquinas.index') }}" class="btn btn-secondary stretched-link"></a>
                 </div>
             </div>
             <div class="col mb-4">
