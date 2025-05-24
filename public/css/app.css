@@ -1,0 +1,7 @@
+/* Sobrescribir .active dentro de navbar con fondo rojo */
+.navbar.bg-danger .nav-link.active,
+.navbar.bg-danger .dropdown-item.active {
+    background-color: #dc3545 !important; /* o usa transparent si no querés fondo */
+    color: #fff !important;
+    font-weight: bold;
+}

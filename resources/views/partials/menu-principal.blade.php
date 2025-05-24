@@ -1,7 +1,7 @@
 <!-- BARRRA DE NAVEGACIÓN -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
     <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{{ route('home') }}">
             <img src="{{ asset('images/logo-sin-fondo-blanco.png') }}" width="100" height="30" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +30,7 @@
                             <a class="dropdown-item {{ request()->routeIs('stock.index') ? 'active' : '' }}" href="#"><i class="mdi mdi-package-variant" aria-hidden="true"></i> Stock</a>
                             <a class="dropdown-item {{ request()->routeIs('maquinas.index') ? 'active' : '' }}" href="#"><i class="mdi mdi-wrench" aria-hidden="true"></i> Maquinaria</a>
                             <a class="dropdown-item {{ request()->routeIs('compras.index') ? 'active' : '' }}" href="#"><i class="mdi mdi-shopping" aria-hidden="true"></i> Compras</a>
-                            <a class="dropdown-item {{ request()->routeIs('proveedores.index') ? 'active' : '' }}" href="#"><i class="mdi mdi-truck" aria-hidden="true"></i> Proveedores</a>
+                            <a class="dropdown-item {{ request()->routeIs('proveedores.index') ? 'active' : '' }}" href="{{ route('proveedores.index') }}"><i class="mdi mdi-truck" aria-hidden="true"></i> Proveedores</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item {{ request()->routeIs('usuarios.index') ? 'active' : '' }}" href="{{ route('usuarios.index') }}"><i class="mdi mdi-account-multiple" aria-hidden="true"></i> Usuarios</a>
                             <a class="dropdown-item {{ request()->routeIs('roles.index') ? 'active' : '' }}" href="{{ route('roles.index') }}"><i class="mdi mdi-shield" aria-hidden="true"></i> Roles</a>

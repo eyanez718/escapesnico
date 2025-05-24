@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\RolController;
 use App\Http\Controllers\UsuarioController;
 
@@ -20,6 +21,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/', function () {
         return view('welcome');
     })->name('home');
+    Route::resource('proveedores', ProveedorController::class)->middleware(['administracion']);
     Route::resource('roles', RolController::class)->middleware(['administracion']);
     Route::resource('usuarios', UsuarioController::class)->middleware(['administracion']);
     Route::post('/logout', function () {

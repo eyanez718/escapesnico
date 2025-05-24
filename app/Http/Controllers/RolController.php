@@ -102,15 +102,15 @@ class RolController extends Controller
     }
 
     /**
-     * Validación para la actualización de un rol
+     * Validación para creación de un rol
      *
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function updateValidator(array $data)
+    protected function createValidator(array $data)
     {
         $reglas = [
-            'nombre' => 'required|unique:roles,nombre,' . $data['id'],
+            'nombre' => 'required|unique:roles,nombre',
             'descripcion' => 'required'
         ];
         $mensajes = [//Los mensajes por validación required no los agrego porque el formulario siempre se envía con todos los campos llenos, de la misma manera con el email que siempre viene en formato email
@@ -122,17 +122,17 @@ class RolController extends Controller
         
         return $validacion;
     }
-
+    
     /**
-     * Validación para creación de un rol
+     * Validación para la actualización de un rol
      *
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function createValidator(array $data)
+    protected function updateValidator(array $data)
     {
         $reglas = [
-            'nombre' => 'required|unique:roles,nombre',
+            'nombre' => 'required|unique:roles,nombre,' . $data['id'],
             'descripcion' => 'required'
         ];
         $mensajes = [//Los mensajes por validación required no los agrego porque el formulario siempre se envía con todos los campos llenos, de la misma manera con el email que siempre viene en formato email

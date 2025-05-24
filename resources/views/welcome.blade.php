@@ -56,7 +56,7 @@
                         <h5 class="card-title"><i class="mdi mdi-truck" aria-hidden="true"></i> Proveedores</h5>
                         <p class="card-text">Administración de empresas o personas que suministran productos o servicios. Incluye contactos, historial de compras y condiciones comerciales.</p>
                     </div>
-                    <a href="#" class="btn btn-secondary stretched-link"></a>
+                    <a href="{{ route('proveedores.index') }}" class="btn btn-secondary stretched-link"></a>
                 </div>
             </div>
             <div class="col mb-4">

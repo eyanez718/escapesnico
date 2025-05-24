@@ -106,34 +106,6 @@ class UsuarioController extends Controller
     }
 
     /**
-     * Validación para la actualización de un usuario
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function updateValidator(array $data)
-    {
-        $reglas = [
-            'nombre' => 'required|unique:usuarios,nombre,' . $data['id'],
-            'nombre_completo' => 'required',
-            'email' => 'required|email|unique:usuarios,email,' . $data['id'],
-            'id_rol' => 'required'
-        ];
-        $mensajes = [//Los mensajes por validación required no los agrego porque el formulario siempre se envía con todos los campos llenos, de la misma manera con el email que siempre viene en formato email
-            'nombre.required' => 'El nombre de usuario es requerido',
-            'nombre.unique' => 'Ya existe un usuario con ese nombre',
-            'nombre_completo.required' => 'El nombre completo es requerido',
-            'email.required' => 'El email es requerido',
-            'email.email' => 'El formato del email es incorrecto',
-            'email.unique' => 'Ya existe un usuario con ese email',
-            'id_rol.required' => 'El rol es requerido',
-        ];
-        $validacion = Validator::make($data, $reglas, $mensajes);
-        
-        return $validacion;
-    }
-
-    /**
      * Validación para la creación de un usuario
      *
      * @param  array  $data
@@ -158,6 +130,34 @@ class UsuarioController extends Controller
             'id_rol.required' => 'El rol es requerido',
             'contrasenia.required' => 'La contraseña es requerida',
             'contrasenia.confirmed' => 'Las contraseñas ingresadas no coinciden',
+        ];
+        $validacion = Validator::make($data, $reglas, $mensajes);
+        
+        return $validacion;
+    }
+    
+    /**
+     * Validación para la actualización de un usuario
+     *
+     * @param  array  $data
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+    protected function updateValidator(array $data)
+    {
+        $reglas = [
+            'nombre' => 'required|unique:usuarios,nombre,' . $data['id'],
+            'nombre_completo' => 'required',
+            'email' => 'required|email|unique:usuarios,email,' . $data['id'],
+            'id_rol' => 'required'
+        ];
+        $mensajes = [//Los mensajes por validación required no los agrego porque el formulario siempre se envía con todos los campos llenos, de la misma manera con el email que siempre viene en formato email
+            'nombre.required' => 'El nombre de usuario es requerido',
+            'nombre.unique' => 'Ya existe un usuario con ese nombre',
+            'nombre_completo.required' => 'El nombre completo es requerido',
+            'email.required' => 'El email es requerido',
+            'email.email' => 'El formato del email es incorrecto',
+            'email.unique' => 'Ya existe un usuario con ese email',
+            'id_rol.required' => 'El rol es requerido',
         ];
         $validacion = Validator::make($data, $reglas, $mensajes);
         
