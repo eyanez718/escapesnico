@@ -18,7 +18,7 @@
             </div>
             <!-- Nombre -->
             <div class="form-group">
-                <label for="nombre" class="form-label">Nombre:</label>
+                <label for="nombre" class="form-label">Nombre de usuario:</label>
                 <input type="text" name="nombre" class="form-control" value="{{ old('nombre', $usuario->nombre) }}">
                 @error('nombre')
                     <div class="text-danger">{{ $message }}</div>

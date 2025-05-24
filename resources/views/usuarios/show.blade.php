@@ -6,7 +6,8 @@
     <div class="container">
         <h1><i class="mdi mdi-eye" aria-hidden="true"></i> Detalle del usuario: {{ $usuario->nombre }}</h1>
         <p><strong>ID:</strong> {{ $usuario->id }}</p>
-        <p><strong>Nombre de usuario:</strong> {{ $usuario->nombre_completo }}</p>
+        <p><strong>Nombre de usuario:</strong> {{ $usuario->nombre }}</p>
+        <p><strong>Nombre completo:</strong> {{ $usuario->nombre_completo }}</p>
         <p><strong>Email:</strong> {{ $usuario->email }}</p>
         <p><strong>Rol:</strong> {{ $usuario->rol->nombre }}</p>
         <!-- Opciones -->

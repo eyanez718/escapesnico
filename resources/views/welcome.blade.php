@@ -5,6 +5,7 @@
 @section('content')
     <div class="container">
         <div class="row row-cols-1 row-cols-md-3">
+            @if (Auth::user()->id_rol == 3)
             <div class="col mb-4">
                 <div class="card h-100">
                     <div class="card-body">
@@ -14,6 +15,7 @@
                     <a href="#" class="btn btn-secondary stretched-link"></a>
                 </div>
             </div>
+            @endif
             <div class="col mb-4">
                 <div class="card h-100">
                     <div class="card-body">
@@ -23,6 +25,7 @@
                     <a href="#" class="btn btn-secondary stretched-link"></a>
                 </div>
             </div>
+            @if (Auth::user()->id_rol == 2)
             <div class="col mb-4">
                 <div class="card h-100">
                     <div class="card-body">
@@ -32,6 +35,8 @@
                     <a href="#" class="btn btn-secondary stretched-link"></a>
                 </div>
             </div>
+            @endif
+            @if (Auth::user()->id_rol == 1)
             <div class="col mb-4">
                 <div class="card h-100">
                     <div class="card-body">
@@ -41,6 +46,8 @@
                     <a href="{{ route('maquinas.index') }}" class="btn btn-secondary stretched-link"></a>
                 </div>
             </div>
+            @endif
+            @if (Auth::user()->id_rol == 2)
             <div class="col mb-4">
                 <div class="card h-100">
                     <div class="card-body">
@@ -50,6 +57,8 @@
                     <a href="#" class="btn btn-secondary stretched-link"></a>
                 </div>
             </div>
+            @endif
+            @if (Auth::user()->id_rol == 2)
             <div class="col mb-4">
                 <div class="card h-100">
                     <div class="card-body">
@@ -59,6 +68,8 @@
                     <a href="{{ route('proveedores.index') }}" class="btn btn-secondary stretched-link"></a>
                 </div>
             </div>
+            @endif
+            @if (Auth::user()->id_rol == 1)
             <div class="col mb-4">
                 <div class="card h-100">
                     <div class="card-body">
@@ -68,6 +79,8 @@
                     <a href="{{ route('usuarios.index') }}" class="btn btn-secondary stretched-link"></a>
                 </div>
             </div>
+            @endif
+            @if (Auth::user()->id_rol == 1)
             <div class="col mb-4">
                 <div class="card h-100">
                     <div class="card-body">
@@ -77,6 +90,7 @@
                     <a href="{{ route('roles.index') }}" class="btn btn-secondary stretched-link"></a>
                 </div>
             </div>
+            @endif
         </div>
     </div>
 @endsection

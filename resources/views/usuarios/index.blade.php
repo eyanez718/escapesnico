@@ -13,7 +13,8 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Nombre</th>
+                    <th>Nombre de usuario</th>
+                    <th>Nombre completo</th>
                     <th>Email</th>
                     <th>Rol</th>
                     <th class="text-right">Acciones</th>
@@ -24,6 +25,7 @@
                 <tr>
                     <td>{{ $usuario->id }}</td>
                     <td>{{ $usuario->nombre }}</td>
+                    <td>{{ $usuario->nombre_completo }}</td>
                     <td>{{ $usuario->email }}</td>
                     <td>{{ $usuario->rol->nombre }}</td>
                     <td class="text-right">

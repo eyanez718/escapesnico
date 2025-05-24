@@ -11,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
 
     <title>Escapes Nico @yield('title', '')</title>
+    <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}">
 </head>
 <body>
     @if (Auth::check())
