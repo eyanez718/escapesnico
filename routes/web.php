@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\MaquinaController;
 use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\RolController;
+use App\Http\Controllers\TipoUsoController;
 use App\Http\Controllers\UsuarioController;
 
 /*
@@ -25,6 +26,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('maquinas', MaquinaController::class)->middleware(['administracion']);
     Route::resource('proveedores', ProveedorController::class)->middleware(['administracion']);
     Route::resource('roles', RolController::class)->middleware(['administracion']);
+    Route::resource('tipos_uso', TipoUsoController::class)->middleware(['administracion']);
     Route::resource('usuarios', UsuarioController::class)->middleware(['administracion']);
     Route::post('/logout', function () {
         Auth::logout();

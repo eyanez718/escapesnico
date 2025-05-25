@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tipos_usos', function (Blueprint $table) {
+        Schema::create('tipos_uso', function (Blueprint $table) {
             $table->tinyIncrements('id');
             $table->string('nombre', 20)->unique();
             $table->timestamps();
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tipos_usos');
+        Schema::dropIfExists('tipos_uso');
     }
 };
