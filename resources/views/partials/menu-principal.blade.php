@@ -28,7 +28,7 @@
                         </a>
                         <div class="dropdown-menu">
                             @if(Auth::user()->id_rol == 2)
-                            <a class="dropdown-item {{ request()->routeIs('stock.index') ? 'active' : '' }}" href="#"><i class="mdi mdi-package-variant" aria-hidden="true"></i> Stock</a>
+                            <a class="dropdown-item {{ request()->routeIs('stock.index') ? 'active' : '' }}" href="{{ route('stock.index') }}"><i class="mdi mdi-package-variant" aria-hidden="true"></i> Stock</a>
                             @endif
                             @if(Auth::user()->id_rol == 1)
                             <a class="dropdown-item {{ request()->routeIs('maquinas.index') ? 'active' : '' }}" href="{{ route('maquinas.index') }}"><i class="mdi mdi-wrench" aria-hidden="true"></i> Maquinaria</a>

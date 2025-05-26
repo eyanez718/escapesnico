@@ -32,7 +32,7 @@
                         <h5 class="card-title"><i class="mdi mdi-package-variant" aria-hidden="true"></i> Stock</h5>
                         <p class="card-text">Control de inventario de materiales e insumos. Permite registrar ingresos, egresos, ajustes y consultar disponibilidad en tiempo real.</p>
                     </div>
-                    <a href="#" class="btn btn-secondary stretched-link"></a>
+                    <a href="{{ route('stock.index') }}" class="btn btn-secondary stretched-link"></a>
                 </div>
             </div>
             @endif
@@ -109,7 +109,7 @@
                         <h5 class="card-title"><i class="mdi mdi-car-multiple" aria-hidden="true"></i> Tipos de vehículo</h5>
                         <p class="card-text">Registro los distintos tipos de vehículo asociados a los insumos y materiales.</p>
                     </div>
-                    <a href="{{ route('tipos_uso.index') }}" class="btn btn-secondary stretched-link"></a>
+                    <a href="{{ route('tipos_vehiculo.index') }}" class="btn btn-secondary stretched-link"></a>
                 </div>
             </div>
             @endif

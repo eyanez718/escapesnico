@@ -23,6 +23,7 @@ class Administracion
         } elseif ($user && $user->id_rol == 2 &&
                     ($request->segment(1) == 'proveedores' ||
                     $request->segment(1) == 'stock' ||
+                    $request->segment(1) == 'insumos' ||
                     $request->segment(1) == 'compras')
         ) {
             return $next($request);
