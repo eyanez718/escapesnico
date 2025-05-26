@@ -102,6 +102,17 @@
                 </div>
             </div>
             @endif
+            @if (Auth::user()->id_rol == 1)
+            <div class="col mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="mdi mdi-car-multiple" aria-hidden="true"></i> Tipos de vehículo</h5>
+                        <p class="card-text">Registro los distintos tipos de vehículo asociados a los insumos y materiales.</p>
+                    </div>
+                    <a href="{{ route('tipos_uso.index') }}" class="btn btn-secondary stretched-link"></a>
+                </div>
+            </div>
+            @endif
         </div>
     </div>
 @endsection
