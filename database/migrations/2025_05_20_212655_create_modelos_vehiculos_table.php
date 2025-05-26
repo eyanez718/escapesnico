@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('modelos_vehiculos', function (Blueprint $table) {
+        Schema::create('modelos_vehiculo', function (Blueprint $table) {
             $table->smallIncrements('id');
             $table->string('nombre', 20)->unique();
             $table->unsignedSmallInteger('id_marca');
+            $table->timestamps();
 
             // FK
             $table->foreign('id_marca')->references('id')->on('marcas_vehiculos');
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('modelos_vehiculos');
+        Schema::dropIfExists('modelos_vehiculo');
     }
 };

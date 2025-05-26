@@ -54,6 +54,9 @@
                             @if(Auth::user()->id_rol == 1)
                             <a class="dropdown-item {{ request()->routeIs('marcas_vehiculo.index') ? 'active' : '' }}" href="{{ route('marcas_vehiculo.index') }}"><i class="mdi mdi-car-select" aria-hidden="true"></i> Marcas de vehículo</a>
                             @endif
+                            @if(Auth::user()->id_rol == 1)
+                            <a class="dropdown-item {{ request()->routeIs('modelos_vehiculo.index') ? 'active' : '' }}" href="{{ route('modelos_vehiculo.index') }}"><i class="mdi mdi-car-select" aria-hidden="true"></i> Modelos de vehículo</a>
+                            @endif
                         </div>
                     </li>
                 @endif

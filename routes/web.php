@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\InsumoController;
 use App\Http\Controllers\MaquinaController;
 use App\Http\Controllers\MarcaVehiculoController;
+use App\Http\Controllers\ModeloVehiculoController;
 use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\RolController;
 use App\Http\Controllers\StockController;
@@ -30,6 +31,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('insumos', InsumoController::class)->middleware(['administracion']);
     Route::resource('maquinas', MaquinaController::class)->middleware(['administracion']);
     Route::resource('marcas_vehiculo', MarcaVehiculoController::class)->middleware(['administracion']);
+    Route::resource('modelos_vehiculo', ModeloVehiculoController::class)->middleware(['administracion']);
     Route::resource('proveedores', ProveedorController::class)->middleware(['administracion']);
     Route::resource('roles', RolController::class)->middleware(['administracion']);
     Route::get('/stock', [StockController::class, 'index'])->middleware(['administracion'])->name('stock.index');

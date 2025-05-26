@@ -124,6 +124,17 @@
                 </div>
             </div>
             @endif
+            @if (Auth::user()->id_rol == 1)
+            <div class="col mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="mdi mdi-car-settings" aria-hidden="true"></i> Modelos de vehículo</h5>
+                        <p class="card-text">Registra los distintos modelos de vehículo asociadas a los materiales.</p>
+                    </div>
+                    <a href="{{ route('modelos_vehiculo.index') }}" class="btn btn-secondary stretched-link"></a>
+                </div>
+            </div>
+            @endif
         </div>
     </div>
 @endsection
