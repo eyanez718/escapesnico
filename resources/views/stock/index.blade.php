@@ -20,10 +20,10 @@
             <div class="col mb-6">
                 <div class="card h-100">
                     <div class="card-body">
-                        <h5 class="card-title"><i class="mdi mdi-shopping" aria-hidden="true"></i> Materiales</h5>
+                        <h5 class="card-title"><i class="mdi mdi-car-door" aria-hidden="true"></i> Materiales</h5>
                         <p class="card-text">Gestiona el stock de materiales.</p>
                     </div>
-                    <a href="#" class="btn btn-secondary stretched-link"></a>
+                    <a href="{{ route('materiales.index') }}" class="btn btn-secondary stretched-link"></a>
                 </div>
             </div>
             @endif

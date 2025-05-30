@@ -22,6 +22,16 @@ abstract class Producto extends Model
         return number_format($costoTotal, 2);
     }
 
+    /**
+     * Retorna el costo unitario con separadores de miles y decimales
+     * 
+     * @return double
+     */
+    public function getCostoUnitarioFormattedAttribute()
+    {
+        return number_format($this->costo_unitario, 2, '.', ',');
+    }
+
     protected function baseFillable()
     {
         return $this->fillable;

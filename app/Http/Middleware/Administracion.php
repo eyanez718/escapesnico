@@ -24,6 +24,8 @@ class Administracion
                     ($request->segment(1) == 'proveedores' ||
                     $request->segment(1) == 'stock' ||
                     $request->segment(1) == 'insumos' ||
+                    $request->segment(1) == 'materiales' ||
+                    $request->segment(1) == 'marcas_vehiculo' ||
                     $request->segment(1) == 'compras')
         ) {
             return $next($request);
