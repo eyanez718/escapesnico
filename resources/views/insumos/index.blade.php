@@ -32,7 +32,7 @@
                     <td>{{ $insumo->tipoUso->nombre }}</td>
                     <td>{{ $insumo->tipoVehiculo->nombre }}</td>
                     <td class="text-right">{{ $insumo->cantidad }}</td>
-                    <td class="text-right">$ {{ $insumo->costo_unitario }}</td>
+                    <td class="text-right">$ {{ $insumo->costo_unitario_formatted }}</td>
                     <td class="text-right">$ {{ $insumo->costoTotal() }}</td>
                     <td class="text-right">
                         <a href="{{ route('insumos.show', $insumo) }}" class="btn btn-dark btn-sm"><i class="mdi mdi-eye" aria-hidden="true"></i></a>

@@ -28,7 +28,8 @@
                 <label for="id_tipo_uso">Tipo de uso</label>
                 <select class="form-control" name="id_tipo_uso">
                     @foreach($tiposUso as $tipoUso)
-                        <option value="{{ $tipoUso->id }}">{{ $tipoUso->nombre }}</option>
+                        <option value="{{ $tipoUso->id }}"
+                        {{ old('id_tipo_uso') == $tipoUso->id ? 'selected' : '' }}>{{ $tipoUso->nombre }}</option>
                     @endforeach
                 </select>
             </div>
@@ -37,7 +38,8 @@
                 <label for="id_tipo_vehiculo">Tipo de vehículo</label>
                 <select class="form-control" name="id_tipo_vehiculo">
                     @foreach($tiposVehiculo as $tipoVehiculo)
-                        <option value="{{ $tipoVehiculo->id }}">{{ $tipoVehiculo->nombre }}</option>
+                        <option value="{{ $tipoVehiculo->id }}"
+                        {{ old('id_tipo_vehiculo') == $tipoVehiculo->id ? 'selected' : '' }}>{{ $tipoVehiculo->nombre }}</option>
                     @endforeach
                 </select>
             </div>

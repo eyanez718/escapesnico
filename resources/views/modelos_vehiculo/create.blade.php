@@ -20,7 +20,9 @@
                 <label for="id_marca">Marca:</label>
                 <select class="form-control" name="id_marca">
                     @foreach($marcasVehiculo as $marcaVehiculo)
-                        <option value="{{ $marcaVehiculo->id }}">{{ $marcaVehiculo->nombre }}</option>
+                        <option value="{{ $marcaVehiculo->id }}"
+                        {{ old('id_marca') == $marcaVehiculo->id ? 'selected' : '' }}>{{ $marcaVehiculo->nombre }}</option>
+                        >{{ $marcaVehiculo->nombre }}</option>
                     @endforeach
                 </select>
             </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\MarcaVehiculo;
+use App\Models\ModeloVehiculo;
 
 class MarcaVehiculoController extends Controller
 {
@@ -132,5 +133,10 @@ class MarcaVehiculoController extends Controller
         $validacion = Validator::make($data, $reglas, $mensajes);
         
         return $validacion;
+    }
+
+    public function getModelos($idMarca) {
+        $modelosVehiculo = ModeloVehiculo::where('id_marca', '=', $idMarca)->get();
+        return response()->json($modelosVehiculo);
     }
 }

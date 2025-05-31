@@ -11,7 +11,7 @@
         <p><strong>Tipo de uso:</strong> {{ $insumo->tipoUso->nombre }}</p>
         <p><strong>Tipo de vehículo:</strong> {{ $insumo->tipoVehiculo->nombre }}</p>
         <p><strong>Cantidad:</strong> {{ $insumo->cantidad }}</p>
-        <p><strong>Costo unitario:</strong> $ {{ $insumo->costo_unitario }}</p>
+        <p><strong>Costo unitario:</strong> $ {{ $insumo->costo_unitario_formatted }}</p>
         <p><strong>Costo total:</strong> $ {{ $insumo->costoTotal() }}</p>
         <!-- Opciones -->
         <div class="text-right">
