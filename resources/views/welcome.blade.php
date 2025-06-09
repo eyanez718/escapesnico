@@ -54,7 +54,7 @@
                         <h5 class="card-title"><i class="mdi mdi-shopping" aria-hidden="true"></i> Compras</h5>
                         <p class="card-text">Gestión de solicitudes y órdenes de compra. Controla el flujo de adquisición de insumos o repuestos, desde la solicitud hasta la recepción.</p>
                     </div>
-                    <a href="#" class="btn btn-secondary stretched-link"></a>
+                    <a href="{{ route('compras.index') }}" class="btn btn-secondary stretched-link"></a>
                 </div>
             </div>
             @endif

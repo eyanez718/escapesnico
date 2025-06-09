@@ -34,7 +34,7 @@
                             <a class="dropdown-item {{ request()->routeIs('maquinas.index') ? 'active' : '' }}" href="{{ route('maquinas.index') }}"><i class="mdi mdi-wrench" aria-hidden="true"></i> Maquinaria</a>
                             @endif
                             @if(Auth::user()->id_rol == 2)
-                            <a class="dropdown-item {{ request()->routeIs('compras.index') ? 'active' : '' }}" href="#"><i class="mdi mdi-shopping" aria-hidden="true"></i> Compras</a>
+                            <a class="dropdown-item {{ request()->routeIs('compras.index') ? 'active' : '' }}" href="{{ route('compras.index') }}"><i class="mdi mdi-shopping" aria-hidden="true"></i> Compras</a>
                             @endif
                             @if(Auth::user()->id_rol == 2)
                             <a class="dropdown-item {{ request()->routeIs('proveedores.index') ? 'active' : '' }}" href="{{ route('proveedores.index') }}"><i class="mdi mdi-truck" aria-hidden="true"></i> Proveedores</a>

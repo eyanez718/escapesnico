@@ -12,11 +12,19 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('compras', function (Blueprint $table) {
-            $table->id();
+            $table->smallIncrements('id');
+            $table->date('fecha');
+            $table->string('numero_factura', 16)->unique();
+            $table->unsignedSmallInteger('id_proveedor');
+            $table->unsignedSmallInteger('id_usuario');
             $table->timestamps();
+
+            //FK
+            $table->foreign('id_proveedor')->references('id')->on('proveedores');
+            $table->foreign('id_usuario')->references('id')->on('usuarios');
         });
     }
-    // TODO migración compras
+    
     /**
      * Reverse the migrations.
      */

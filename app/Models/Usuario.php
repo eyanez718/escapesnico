@@ -44,6 +44,15 @@ class Usuario extends Authenticatable
     }
 
     /**
+     * Relación con el modelo Compra
+     * 
+     * @return array (Compras)
+     */
+    public function compras() {
+        return $this->hasMany(Compra::class, 'id', 'id_usuario');
+    }
+
+    /**
      * Rol asociado al usuario
      * 
      * @return Rol

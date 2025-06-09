@@ -31,7 +31,7 @@
                     <!-- Botón iniciar sesión -->
                     <div class="form-group-row">
                         <div class="col-sm-12 text-center">
-                            <button type="submit" class="btn btn-danger"><i class="mdi mdi-login" aria-hidden="true"></i>Iniciar sesión</button>
+                            <button type="submit" class="btn btn-danger"><i class="mdi mdi-login" aria-hidden="true"></i> Iniciar sesión</button>
                         </div>
                     </div>
                 </form>

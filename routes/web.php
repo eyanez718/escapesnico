@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\CompraController;
 use App\Http\Controllers\InsumoController;
 use App\Http\Controllers\MaquinaController;
 use App\Http\Controllers\MarcaVehiculoController;
@@ -29,6 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/', function () {
         return view('welcome');
     })->name('home');
+    Route::resource('compras', CompraController::class)->middleware(['administracion']);
     Route::resource('insumos', InsumoController::class)->middleware(['administracion']);
     Route::resource('maquinas', MaquinaController::class)->middleware(['administracion']);
     Route::resource('marcas_vehiculo', MarcaVehiculoController::class)->middleware(['administracion']);
