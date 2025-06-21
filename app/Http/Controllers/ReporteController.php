@@ -70,6 +70,7 @@ class ReporteController extends Controller
                             ->where('ordenes_trabajo.estado', 1)
                             ->selectRaw('SUM(ordenes_trabajo_maquinas.minutos_uso) as total_minutos')
                             ->selectRaw('SUM(ordenes_trabajo_maquinas.cambio_combustible) as total_cambios_combustible')
+                            ->selectRaw('COUNT(ordenes_trabajo.id) as total_trabajos')
                             ->groupBy('maquinas.id', 'maquinas.nombre')
                             ->orderByDesc('total_minutos')
                             ->get();
@@ -84,12 +85,12 @@ class ReporteController extends Controller
      */
     public function estadisticasOperadores()
     {
-        $operadores = Usuario::select('usuarios.id', 'usuarios.nombre')
+        $operadores = Usuario::select('usuarios.id', 'usuarios.nombre', 'usuarios.nombre_completo')
                             ->join('ordenes_trabajo', 'ordenes_trabajo.id_usuario', '=', 'usuarios.id')
                             ->where('ordenes_trabajo.estado', 1)
                             ->selectRaw('SUM(ordenes_trabajo.minutos_trabajo) as total_minutos_trabajo')
                             ->selectRaw('COUNT(ordenes_trabajo.id) as total_trabajos')
-                            ->groupBy('usuarios.id', 'usuarios.nombre')
+                            ->groupBy('usuarios.id', 'usuarios.nombre', 'usuarios.nombre_completo')
                             ->get();
 
         return view('reportes.estadisticas_operadores', compact('operadores'));

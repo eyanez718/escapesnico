@@ -26,7 +26,8 @@ class Administracion
                     $request->segment(1) == 'insumos' ||
                     $request->segment(1) == 'materiales' ||
                     $request->segment(1) == 'marcas_vehiculo' ||
-                    $request->segment(1) == 'compras')
+                    $request->segment(1) == 'compras' ||
+                    $request->segment(1) == 'reportes')
         ) {
             return $next($request);
         }

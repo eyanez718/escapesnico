@@ -71,6 +71,8 @@ class OrdenTrabajoController extends Controller
             'trabajo_realizado_2' => $request->trabajo_realizado_2,
             'trabajo_realizado_3' => $request->trabajo_realizado_3,
             'trabajo_realizado_4' => $request->trabajo_realizado_4,
+            'minutos_trabajo' => $request->minutos_trabajo,
+            'estado' => 0,
         ]);
 
         // Insumos
@@ -168,6 +170,7 @@ class OrdenTrabajoController extends Controller
             'fecha' => 'required|date_format:Y-m-d',
             'id_usuario' => 'required',
             'empresa' => 'required',
+            'minutos_trabajo' => 'required|integer|min:1',
             'patente' => ['required', function ($attribute, $value, $fail) {
                 $valido = true;
                 $cadena = $value;
@@ -215,6 +218,8 @@ class OrdenTrabajoController extends Controller
             'id_usuario' => 'El operador es requerido',
             'empresa.required' => 'La empresa es requerida',
             'patente.required' => 'La patente es requerida',
+            'minutos_trabajo.required' => 'Debe cargar los minutos trabajados',
+            'minutos_trabajo.min' => 'La cantidad de minutos mínima es 1',
         ];
         $validacion = Validator::make($data, $reglas, $mensajes);
         

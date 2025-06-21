@@ -10,7 +10,7 @@
             <!-- Nombre -->
             <div class="form-group">
                 <label for="nombre" class="form-label">Nombre:</label>
-                <input type="text" name="nombre" class="form-control" value="{{ old('nombre') }}">
+                <input type="text" name="nombre" maxlength="20" class="form-control" value="{{ old('nombre') }}">
                 @error('nombre')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
@@ -18,7 +18,7 @@
             <!-- Descripción -->
             <div class="form-group">
                 <label for="descripcion" class="form-label">Descripción:</label>
-                <input type="text" name="descripcion" class="form-control" value="{{ old('descripcion') }}">
+                <input type="text" name="descripcion" maxlength="100" class="form-control" value="{{ old('descripcion') }}">
                 @error('descripcion')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror

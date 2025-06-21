@@ -8,6 +8,7 @@
         <p><strong>Estado:</strong> @if($ordenTrabajo->estado == 0) Cargada @else @if($ordenTrabajo->estado == 1) Finalizada @else Cancelada @endif @endif</p>
         <p><strong>Fecha:</strong> {{ \Carbon\Carbon::parse($ordenTrabajo->fecha)->format('d/m/Y') }}</p>
         <p><strong>Empresa:</strong> {{ $ordenTrabajo->empresa }}</p>
+        <p><strong>Duración del trabajo (minutos):</strong> {{ $ordenTrabajo->minutos_trabajo }}</p>
         <p><strong>Patente:</strong> {{ $ordenTrabajo->patente }}</p>
         <p><strong>Modelo de vehículo:</strong> {{ $ordenTrabajo->modeloVehiculo->marcaVehiculo->nombre }} {{ $ordenTrabajo->modeloVehiculo->nombre }}</p>
         <p><strong>Tipo de vehículo:</strong> {{ $ordenTrabajo->tipoVehiculo->nombre }}</p>
@@ -16,7 +17,7 @@
             @if($ordenTrabajo->trabajo_realizado_3)- {{ Arr::get($trabajosRealizados, $ordenTrabajo->trabajo_realizado_3)['nombre'] }}@endif
             @if($ordenTrabajo->trabajo_realizado_4)- {{ Arr::get($trabajosRealizados, $ordenTrabajo->trabajo_realizado_4)['nombre'] }}@endif
         </p>
-        <p><strong>Operador:</strong> {{ $ordenTrabajo->usuario->nombre }}</p>
+        <p><strong>Operador:</strong> {{ $ordenTrabajo->usuario->nombre_completo }} ({{ $ordenTrabajo->usuario->nombre }})</p>
         <h2>Materiales e insumos:</h2>
         @if (count($ordenTrabajo->insumos) > 0 || count($ordenTrabajo->materiales) > 0)
             <table class="table table-striped table-hover table-sm" id="selectedListTable">

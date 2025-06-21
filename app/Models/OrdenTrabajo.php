@@ -21,7 +21,7 @@ class OrdenTrabajo extends Model
      *
      * @var array
      */
-    protected $fillable = ['id', 'fecha', 'id_usuario', 'id_modelo_vehiculo', 'id_tipo_vehiculo', 'empresa', 'patente', 'trabajo_realizado_1', 'trabajo_realizado_2', 'trabajo_realizado_3', 'trabajo_realizado_4'];
+    protected $fillable = ['id', 'fecha', 'id_usuario', 'id_modelo_vehiculo', 'id_tipo_vehiculo', 'empresa', 'patente', 'trabajo_realizado_1', 'trabajo_realizado_2', 'trabajo_realizado_3', 'trabajo_realizado_4', 'estado', 'minutos_trabajo'];
 
     /**
      * Relación con el modelo Insumo

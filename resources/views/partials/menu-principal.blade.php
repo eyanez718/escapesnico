@@ -18,9 +18,11 @@
                         <a class="nav-link" href="{{ route('ordenes_trabajo.index') }}"><i class="mdi mdi-file-document-edit" aria-hidden="true"></i> Ordenes de trabajo</a>
                     </li>
                 @endif
-                <li class="nav-item {{ request()->routeIs('reportes') ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('reportes.index') }}"><i class="mdi mdi-newspaper" aria-hidden="true"></i> Reportes</a>
-                </li>
+                @if(Auth::user()->id_rol != 3)
+                    <li class="nav-item {{ request()->routeIs('reportes') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('reportes.index') }}"><i class="mdi mdi-newspaper" aria-hidden="true"></i> Reportes</a>
+                    </li>
+                @endif
                 @if(Auth::user()->id_rol == 1 || Auth::user()->id_rol == 2)
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">

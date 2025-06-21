@@ -29,7 +29,7 @@
                     <td>{{ \Carbon\Carbon::parse($ordenTrabajo->fecha)->format('d/m/Y') }}</td>
                     <td>{{ $ordenTrabajo->empresa }}</td>
                     <td>{{ $ordenTrabajo->patente }}</td>
-                    <td>{{ $ordenTrabajo->usuario->nombre }}</td>
+                    <td>{{ $ordenTrabajo->usuario->nombre_completo }} ({{ $ordenTrabajo->usuario->nombre }})</td>
                     <td class="text-right">
                         <a href="{{ route('ordenes_trabajo.show', $ordenTrabajo) }}" class="btn btn-dark btn-sm"><i class="mdi mdi-eye" aria-hidden="true"></i></a>
                         @if($ordenTrabajo->estado == 0)

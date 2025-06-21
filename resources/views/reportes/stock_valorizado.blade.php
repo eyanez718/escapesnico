@@ -4,6 +4,14 @@
 
 @section('content')
     <div class="container">
+        <div class="d-none d-print-block">
+            <div class="row justify-content-center">
+                <img src="{{ asset('images/logo.png') }}" 
+                    alt="Logo impresión"
+                    class="text-center"
+                    style="width: 250px; margin-bottom: 20px;">
+            </div>
+        </div>
         <h1><i class="mdi mdi-newspaper" aria-hidden="true"></i> Stock valorizado</h1>
         <h2><i class="mdi mdi-nut" aria-hidden="true"></i> Insumos</h2>
         <table class="table table-striped table-hover table-sm">
@@ -63,5 +71,9 @@
                 </tr>
             </tbody>
         </table>
+        <div class="text-right">
+            <button class="btn btn-dark d-print-none" onclick="window.print()"><i class="mdi mdi-printer" aria-hidden="true"></i> Imprimir</button>
+            <a href="{{ route('reportes.index') }}" class="btn btn-secondary"><i class="mdi mdi-arrow-left" aria-hidden="true"></i> Volver</a>
+        </div>
     </div>
 @endsection

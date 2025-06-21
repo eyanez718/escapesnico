@@ -10,7 +10,7 @@
             
             <div class="form-row">
                 <!-- Fecha -->
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <label for="fecha" class="form-label">Fecha:</label>
                     <input type="date" name="fecha" class="form-control" value="{{ old('fecha') }}">
                     @error('fecha')
@@ -18,10 +18,18 @@
                     @enderror
                 </div>
                 <!-- Empresa -->
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <label for="empresa" class="form-label">Empresa:</label>
                     <input type="text" name="empresa" class="form-control" value="{{ old('empresa') }}">
                     @error('empresa')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+                <!-- Empresa -->
+                <div class="form-group col-md-4">
+                    <label for="minutos_trabajo" class="form-label">Duación del trabajo (minutos):</label>
+                    <input type="number" min="1" name="minutos_trabajo" class="form-control" value="{{ old('minutos_trabajo') ? old('minutos_trabajo') : 1 }}">
+                    @error('minutos_trabajo')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
@@ -117,7 +125,7 @@
                 <select class="form-control" name="id_usuario">
                     @foreach($usuarios as $usuario)
                         <option value="{{ $usuario->id }}"
-                        {{ old('id_usuario') == $usuario->id ? 'selected' : '' }}>{{ $usuario->nombre }}</option>
+                        {{ old('id_usuario') == $usuario->id ? 'selected' : '' }}>{{ $usuario->nombre_completo }} ({{ $usuario->nombre }})</option>
                     @endforeach
                     @error('id_usuario')
                         <div class="text-danger">{{ $message }}</div>

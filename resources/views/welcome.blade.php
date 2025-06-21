@@ -16,6 +16,7 @@
                 </div>
             </div>
             @endif
+            @if (Auth::user()->id_rol != 3)
             <div class="col mb-4">
                 <div class="card h-100">
                     <div class="card-body">
@@ -25,6 +26,7 @@
                     <a href="{{ route('reportes.index') }}" class="btn btn-secondary stretched-link"></a>
                 </div>
             </div>
+            @endif
             @if (Auth::user()->id_rol == 2)
             <div class="col mb-4">
                 <div class="card h-100">

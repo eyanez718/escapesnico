@@ -42,12 +42,12 @@ Route::middleware('auth')->group(function () {
     Route::resource('ordenes_trabajo', OrdenTrabajoController::class);
     Route::post('/ordenes_trabajo/cambiarEstado', [OrdenTrabajoController::class, 'cambiarEstado'])->name('ordenes_trabajo.cambiar_estado');
     Route::resource('proveedores', ProveedorController::class)->middleware(['administracion']);
-    Route::get('/reportes', [ReporteController::class, 'index'])->name('reportes.index');
-    Route::get('/reportes/stock_valorizado', [ReporteController::class, 'stockValorizado'])->name('reportes.stock_valorizado');
-    Route::get('/reportes/stock_valorizado_período', [ReporteController::class, 'stockValorizadoPeríodo'])->name('reportes.stock_valorizado_período');
-    Route::get('/reportes/ranking_proveedores', [ReporteController::class, 'rankingProveedores'])->name('reportes.ranking_proveedores');
-    Route::get('/reportes/estadisticas_operadores', [ReporteController::class, 'estadisticasOperadores'])->name('reportes.estadisticas_operadores');
-    Route::get('/reportes/estadisticas_maquinaria', [ReporteController::class, 'estadisticasMaquinaria'])->name('reportes.estadisticas_maquinaria');
+    Route::get('/reportes', [ReporteController::class, 'index'])->name('reportes.index')->middleware(['administracion']);
+    Route::get('/reportes/stock_valorizado', [ReporteController::class, 'stockValorizado'])->name('reportes.stock_valorizado')->middleware(['administracion']);
+    Route::get('/reportes/stock_valorizado_período', [ReporteController::class, 'stockValorizadoPeríodo'])->name('reportes.stock_valorizado_período')->middleware(['administracion']);
+    Route::get('/reportes/ranking_proveedores', [ReporteController::class, 'rankingProveedores'])->name('reportes.ranking_proveedores')->middleware(['administracion']);
+    Route::get('/reportes/estadisticas_operadores', [ReporteController::class, 'estadisticasOperadores'])->name('reportes.estadisticas_operadores')->middleware(['administracion']);
+    Route::get('/reportes/estadisticas_maquinaria', [ReporteController::class, 'estadisticasMaquinaria'])->name('reportes.estadisticas_maquinaria')->middleware(['administracion']);
     Route::resource('roles', RolController::class)->middleware(['administracion']);
     Route::get('/stock', [StockController::class, 'index'])->middleware(['administracion'])->name('stock.index');
     Route::resource('tipos_uso', TipoUsoController::class)->middleware(['administracion']);
