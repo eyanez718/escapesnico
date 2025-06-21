@@ -47,5 +47,8 @@
                 @endforeach
             </tbody>
         </table>
+        <div class="text-right">
+            <a href="{{ route('stock.index') }}" class="btn btn-secondary"><i class="mdi mdi-arrow-left" aria-hidden="true"></i> Volver</a>
+        </div>
     </div>
 @endsection

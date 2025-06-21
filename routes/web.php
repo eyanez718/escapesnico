@@ -50,6 +50,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/reportes/estadisticas_maquinaria', [ReporteController::class, 'estadisticasMaquinaria'])->name('reportes.estadisticas_maquinaria')->middleware(['administracion']);
     Route::resource('roles', RolController::class)->middleware(['administracion']);
     Route::get('/stock', [StockController::class, 'index'])->middleware(['administracion'])->name('stock.index');
+    Route::get('/stock/importar_listado_precios', [StockController::class, 'importarListadoPrecios'])->middleware(['administracion'])->name('stock.importar_listado_precios');
+    Route::post('/stock/procesar_listado_precios', [StockController::class, 'procesarListadoPrecios'])->middleware(['administracion'])->name('stock.procesar_listado_precios');
     Route::resource('tipos_uso', TipoUsoController::class)->middleware(['administracion']);
     Route::resource('tipos_vehiculo', TipoVehiculoController::class)->middleware(['administracion']);
     Route::resource('usuarios', UsuarioController::class)->middleware(['administracion']);
