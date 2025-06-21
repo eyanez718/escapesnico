@@ -12,7 +12,7 @@
                         <h5 class="card-title"><i class="mdi mdi-file-document-edit" aria-hidden="true"></i> Ordenes de trabajo</h5>
                         <p class="card-text">Gestión integral de tareas operativas o mantenimientos programados. Permite crear, asignar, supervisar y cerrar órdenes relacionadas con procesos técnicos, operativos o de servicio.</p>
                     </div>
-                    <a href="#" class="btn btn-secondary stretched-link"></a>
+                    <a href="{{ route('ordenes_trabajo.index') }}" class="btn btn-secondary stretched-link"></a>
                 </div>
             </div>
             @endif

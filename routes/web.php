@@ -8,6 +8,7 @@ use App\Http\Controllers\MaquinaController;
 use App\Http\Controllers\MarcaVehiculoController;
 use App\Http\Controllers\MaterialController;
 use App\Http\Controllers\ModeloVehiculoController;
+use App\Http\Controllers\OrdenTrabajoController;
 use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\RolController;
 use App\Http\Controllers\StockController;
@@ -37,6 +38,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/materiales/marcas_vehiculo/obtener_modelos/{idMarca}', [MarcaVehiculoController::class, 'getModelos'])->middleware(['administracion']);
     Route::resource('materiales', MaterialController::class)->middleware(['administracion']);
     Route::resource('modelos_vehiculo', ModeloVehiculoController::class)->middleware(['administracion']);
+    Route::resource('ordenes_trabajo', OrdenTrabajoController::class);
+    Route::post('/ordenes_trabajo/cambiarEstado', [OrdenTrabajoController::class, 'cambiarEstado'])->name('ordenes_trabajo.cambiar_estado');
     Route::resource('proveedores', ProveedorController::class)->middleware(['administracion']);
     Route::resource('roles', RolController::class)->middleware(['administracion']);
     Route::get('/stock', [StockController::class, 'index'])->middleware(['administracion'])->name('stock.index');

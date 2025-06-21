@@ -14,8 +14,8 @@
                     <a class="nav-link" href="{{ route('home') }}"> <i class="mdi mdi-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a>
                 </li>
                 @if(Auth::user()->id_rol == 3)
-                    <li class="nav-item {{ request()->routeIs('ordenesTrabajo') ? 'active' : '' }}">
-                        <a class="nav-link" href="#"><i class="mdi mdi-file-document-edit" aria-hidden="true"></i> Ordenes de trabajo</a>
+                    <li class="nav-item {{ request()->routeIs('ordenes_trabajo.index') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('ordenes_trabajo.index') }}"><i class="mdi mdi-file-document-edit" aria-hidden="true"></i> Ordenes de trabajo</a>
                     </li>
                 @endif
                 <li class="nav-item {{ request()->routeIs('reportes') ? 'active' : '' }}">

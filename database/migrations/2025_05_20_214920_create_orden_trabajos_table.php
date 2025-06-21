@@ -11,9 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('orden_trabajos', function (Blueprint $table) {
-            $table->id();
+        Schema::create('ordenes_trabajo', function (Blueprint $table) {
+            $table->smallIncrements('id');
+            $table->date('fecha');
+            $table->unsignedSmallInteger('id_usuario');
+            $table->unsignedSmallInteger('id_modelo_vehiculo');
+            $table->unsignedTinyInteger('id_tipo_vehiculo');
+            $table->string('empresa', 20);
+            $table->string('patente', 20);
             $table->timestamps();
+
+            //FK
+            $table->foreign('id_usuario')->references('id')->on('usuarios');
+            $table->foreign('id_modelo_vehiculo')->references('id')->on('modelos_vehiculo');
+            $table->foreign('id_tipo_vehiculo')->references('id')->on('tipos_vehiculo');
         });
     }
     // TODO migración ordenes
@@ -22,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('orden_trabajos');
+        Schema::dropIfExists('ordenes_trabajo');
     }
 };
