@@ -67,7 +67,7 @@
                 <div class="form-group col-md-3">
                     <label for="trabajo_realizado_1">Trabajo realizado 1:</label>
                     <select class="form-control" name="trabajo_realizado_1">
-                        <option value="0">Selaccionar trabajo</option>
+                        <option value="0">Seleccionar trabajo</option>
                         @foreach($trabajosRealizados as $trabajoRealizado)
                             <option value="{{ $trabajoRealizado['id'] }}"
                             {{ old('trabajo_realizado_1') == $trabajoRealizado['id'] ? 'selected' : '' }}>{{ $trabajoRealizado['nombre'] }}</option>
@@ -78,7 +78,7 @@
                 <div class="form-group col-md-3">
                     <label for="trabajo_realizado_2">Trabajo realizado 2:</label>
                     <select class="form-control" name="trabajo_realizado_2">
-                        <option value="0">Selaccionar trabajo</option>
+                        <option value="0">Seleccionar trabajo</option>
                         @foreach($trabajosRealizados as $trabajoRealizado)
                             <option value="{{ $trabajoRealizado['id'] }}"
                             {{ old('trabajo_realizado_2') == $trabajoRealizado['id'] ? 'selected' : '' }}>{{ $trabajoRealizado['nombre'] }}</option>
@@ -89,7 +89,7 @@
                 <div class="form-group col-md-3">
                     <label for="trabajo_realizado_3">Trabajo realizado 3:</label>
                     <select class="form-control" name="trabajo_realizado_3">
-                        <option value="0">Selaccionar trabajo</option>
+                        <option value="0">Seleccionar trabajo</option>
                         @foreach($trabajosRealizados as $trabajoRealizado)
                             <option value="{{ $trabajoRealizado['id'] }}"
                             {{ old('trabajo_realizado_3') == $trabajoRealizado['id'] ? 'selected' : '' }}>{{ $trabajoRealizado['nombre'] }}</option>
@@ -100,7 +100,7 @@
                 <div class="form-group col-md-3">
                     <label for="trabajo_realizado_4">Trabajo realizado 4:</label>
                     <select class="form-control" name="trabajo_realizado_4">
-                        <option value="0">Selaccionar trabajo</option>
+                        <option value="0">Seleccionar trabajo</option>
                         @foreach($trabajosRealizados as $trabajoRealizado)
                             <option value="{{ $trabajoRealizado['id'] }}"
                             {{ old('trabajo_realizado_4') == $trabajoRealizado['id'] ? 'selected' : '' }}>{{ $trabajoRealizado['nombre'] }}</option>

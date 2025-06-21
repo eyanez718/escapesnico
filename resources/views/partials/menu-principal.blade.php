@@ -19,7 +19,7 @@
                     </li>
                 @endif
                 <li class="nav-item {{ request()->routeIs('reportes') ? 'active' : '' }}">
-                    <a class="nav-link" href="#"><i class="mdi mdi-newspaper" aria-hidden="true"></i> Reportes</a>
+                    <a class="nav-link" href="{{ route('reportes.index') }}"><i class="mdi mdi-newspaper" aria-hidden="true"></i> Reportes</a>
                 </li>
                 @if(Auth::user()->id_rol == 1 || Auth::user()->id_rol == 2)
                     <li class="nav-item dropdown">

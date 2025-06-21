@@ -22,7 +22,7 @@
                         <h5 class="card-title"><i class="mdi mdi-newspaper" aria-hidden="true"></i> Reportes</h5>
                         <p class="card-text">Visualización y generación de informes sobre datos del sistema.</p>
                     </div>
-                    <a href="#" class="btn btn-secondary stretched-link"></a>
+                    <a href="{{ route('reportes.index') }}" class="btn btn-secondary stretched-link"></a>
                 </div>
             </div>
             @if (Auth::user()->id_rol == 2)

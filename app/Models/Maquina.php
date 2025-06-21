@@ -22,4 +22,14 @@ class Maquina extends Model
      * @var array
      */
     protected $fillable = ['nombre', 'descripcion', 'usa_combustible'];
+
+    /**
+     * Relación con el modelo OrdenTrabajo
+     * 
+     * @return array (OrdenTrabajo)
+     */
+    public function ordenesTrabajo() {
+        return $this->belongsToMany(OrdenTrabajo::class, 'ordenes_trabajo_maquinas', 'id_orden_trabajo', 'id_maquina')
+                    ->withPivot('minutos_uso', 'cambio_combustible');
+    }
 }

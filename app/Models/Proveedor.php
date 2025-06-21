@@ -21,7 +21,7 @@ class Proveedor extends Model
      * 
      * @var array
      */
-    protected $fillable = ['nombre', 'descripcion', 'email'];
+    protected $fillable = ['id', 'nombre', 'descripcion', 'email'];
 
     /**
      * Relación con el modelo Compra
@@ -29,6 +29,6 @@ class Proveedor extends Model
      * @return array (Compras)
      */
     public function compras() {
-        return $this->hasMany(Compra::class, 'id', 'id_proveedor');
+        return $this->hasMany(Compra::class, 'id_proveedor', 'id');
     }
 }
