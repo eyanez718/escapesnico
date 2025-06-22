@@ -164,11 +164,13 @@ class OrdenTrabajoController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function createValidator(array $data)
+    public function createValidator(array $data)
     {
         $reglas = [
             'fecha' => 'required|date_format:Y-m-d',
             'id_usuario' => 'required',
+            'id_modelo_vehiculo' => 'required',
+            'id_tipo_vehiculo' => 'required',
             'empresa' => 'required',
             'minutos_trabajo' => 'required|integer|min:1',
             'patente' => ['required', function ($attribute, $value, $fail) {
@@ -215,7 +217,9 @@ class OrdenTrabajoController extends Controller
         $mensajes = [//Los mensajes por validación required no los agrego porque el formulario siempre se envía con todos los campos llenos, de la misma manera con el email que siempre viene en formato email
             'fecha.required' => 'La fecha de la compra es requerida',
             'fecha.date_format' => 'El formato de la fecha es incorrecto',
-            'id_usuario' => 'El operador es requerido',
+            'id_usuario.required' => 'El operador es requerido',
+            'id_modelo_vehiculo.required' => 'El modelo de vehículo es requerido',
+            'id_tipo_vehiculo.required' => 'El modelo de vehículo es requerido',
             'empresa.required' => 'La empresa es requerida',
             'patente.required' => 'La patente es requerida',
             'minutos_trabajo.required' => 'Debe cargar los minutos trabajados',
